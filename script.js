@@ -221,8 +221,8 @@ window.addEventListener('load', () => {
   let currentX = 0, currentY = 0;
 
   window.addEventListener('mousemove', (e) => {
-    targetX = (e.clientX / window.innerWidth - 0.5) * 2;
-    targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+    targetX = (e.clientX / window.innerWidth - 1) * 2;
+    targetY = (e.clientY / window.innerHeight - 1) * 2;
   });
 
   window.addEventListener('scroll', () => {

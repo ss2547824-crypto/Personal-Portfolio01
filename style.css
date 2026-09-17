@@ -968,7 +968,7 @@ button { cursor: pointer; border: none; background: none; }
 .grad-4 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
 .grad-5 { background: linear-gradient(135deg, #10b981, #06b6d4); }
 .grad-6 { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
-
+.grad-7 { background: linear-gradient(135deg, #4d0653, #b11c29); }
 .project-thumb > i {
   position: relative;
   z-index: 2;
