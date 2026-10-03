@@ -17,10 +17,36 @@
 /* =========================================================
    1. PRELOADER
    ========================================================= */
-window.addEventListener('load', () => {
+/* ================= PRELOADER ================= */
+(function initPreloader() {
   const preloader = document.getElementById('preloader');
-  setTimeout(() => preloader.classList.add('hidden'), 700);
-});
+  const video = document.getElementById('preloaderVideo');
+
+  if (!preloader || !video) return;
+
+  function hidePreloader() {
+    preloader.classList.add('preloader-hide');
+
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 800);
+  }
+
+  // Disable scrolling while preloader is visible
+  document.body.style.overflow = 'hidden';
+
+  // Hide when video finishes
+  video.addEventListener('ended', hidePreloader);
+
+  // Hide if video fails to load
+  video.addEventListener('error', hidePreloader);
+
+  // Handle very short/cached videos
+  if (video.ended) {
+    hidePreloader();
+  }
+})();
 
 /* =========================================================
    2. CUSTOM CURSOR
