@@ -752,31 +752,64 @@
 
       <!-- Form -->
       <form class="contact-form reveal" id="contactForm" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder=" " required />
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" placeholder=" " required />
-            <label for="email">Your Email</label>
-          </div>
-        </div>
+  <div class="form-row">
+    <div class="form-group">
+      <input type="text" id="name" name="name" placeholder=" " required />
+      <label for="name">Your Name</label>
+    </div>
 
-        <div class="form-group">
-          <input type="text" id="subject" name="subject" placeholder=" " required />
-          <label for="subject">Subject</label>
-        </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder=" " required />
+      <label for="email">Your Email</label>
+    </div>
+  </div>
 
-        <div class="form-group">
-          <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
-          <label for="message">Message</label>
-        </div>
+  <div class="form-group">
+    <input type="text" id="subject" name="subject" placeholder=" " required />
+    <label for="subject">Subject</label>
+  </div>
 
-        <button type="submit" class="btn btn-primary btn-full">
-          <span>Send Message</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
+  <div class="form-group">
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      placeholder=" "
+      required
+    ></textarea>
+    <label for="message">Message</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-full">
+    <span>Contact via Gmail</span>
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</form>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!this.reportValidity()) return;
+
+    const recipient = "ss2547824@gmail.com"; // Your Gmail address
+
+    const name = this.elements.name.value.trim();
+    const email = this.elements.email.value.trim();
+    const subject = this.elements.subject.value.trim();
+    const message = this.elements.message.value.trim();
+
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+
+    const gmailURL =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=" + encodeURIComponent(recipient) +
+      "&su=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.open(gmailURL, "_blank", "noopener,noreferrer");
+  });
+</script>
 
         <p class="form-status" id="formStatus"></p>
       </form>
