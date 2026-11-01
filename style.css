@@ -1379,61 +1379,101 @@ button { cursor: pointer; border: none; background: none; }
 /* =========================================================
    16. CONTACT
    ========================================================= */
-.contact-grid {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  align-items: start;
-  gap: 42px;
+#contactForm,
+#contactForm * {
+  box-sizing: border-box;
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
+#contactForm {
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+#contactForm .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
-.info-card {
+#contactForm .form-group {
+  position: relative;
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 24px 16px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #fff;
+  color: #17223b;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#contactForm textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#contactForm label {
+  position: absolute;
+  top: 19px;
+  left: 16px;
+  color: #64748b;
+  pointer-events: none;
+  transform-origin: left top;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#contactForm input:focus + label,
+#contactForm input:not(:placeholder-shown) + label,
+#contactForm textarea:focus + label,
+#contactForm textarea:not(:placeholder-shown) + label {
+  transform: translateY(-13px) scale(0.78);
+  color: #2563eb;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+#contactForm .btn-full {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 20px 22px;
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: .4s var(--ease);
-}
-.info-card:hover {
-  transform: translateX(7px);
-  border-color: rgba(99, 102, 241, .45);
-  box-shadow: 0 22px 46px -24px rgba(99, 102, 241, .7);
-}
-
-.info-icon {
-  flex-shrink: 0;
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 12px;
+  background: #2563eb;
   color: #fff;
-  border-radius: 13px;
-  background: var(--grad);
-  box-shadow: 0 12px 26px -12px var(--primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
-.info-card span {
-  font-size: .72rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--text-dim);
+#contactForm .btn-full:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
 }
-.info-card h4 {
-  font-size: .92rem;
-  font-weight: 600;
-  color: var(--text);
-  word-break: break-word;
+
+@media (max-width: 600px) {
+  #contactForm .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 /* Form */

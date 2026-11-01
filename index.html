@@ -713,8 +713,9 @@
       <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
       <p class="section-sub">Have a project idea, internship offer, or just want to say hi? Drop a message.</p>
     </div>
-
     <div class="contact-grid">
+
+      
       <!-- Info -->
       <div class="contact-info reveal">
         <a href="mailto:your.email@example.com" class="info-card">
@@ -754,12 +755,27 @@
       <form class="contact-form reveal" id="contactForm" novalidate>
   <div class="form-row">
     <div class="form-group">
-      <input type="text" id="name" name="name" placeholder=" " required />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder=" "
+        autocomplete="name"
+        required
+      />
       <label for="name">Your Name</label>
     </div>
 
     <div class="form-group">
-      <input type="email" id="email" name="email" placeholder=" " required />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder=" "
+        autocomplete="email"
+        inputmode="email"
+        required
+      />
       <label for="email">Your Email</label>
     </div>
   </div>
@@ -781,10 +797,11 @@
   </div>
 
   <button type="submit" class="btn btn-primary btn-full">
-    <span>Contact via Gmail</span>
-    <i class="fa-solid fa-paper-plane"></i>
+    <span>Contact Me</span>
+    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
   </button>
 </form>
+
 
 <script>
   document.getElementById("contactForm").addEventListener("submit", function (event) {

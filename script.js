@@ -51,41 +51,10 @@
 /* =========================================================
    2. CUSTOM CURSOR
    ========================================================= */
-(function initCursor() {
-  const dot = document.querySelector('.cursor-dot');
-  const outline = document.querySelector('.cursor-outline');
-  if (!dot || !outline) return;
-
-  // Disable on touch devices
-  if (window.matchMedia('(hover: none)').matches) return;
-
-  let mouseX = 0, mouseY = 0;
-  let outlineX = 0, outlineY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-  });
-
-  // Smooth trailing for the outline
-  function animateOutline() {
-    outlineX += (mouseX - outlineX) * 0.15;
-    outlineY += (mouseY - outlineY) * 0.15;
-    outline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateOutline);
-  }
-  animateOutline();
-
-  // Grow on hoverable elements
-  const hoverTargets = document.querySelectorAll(
-    'a, button, .project-card, .skill-card, .cert-card, .social-card, .coding-card, input, textarea'
-  );
-  hoverTargets.forEach((el) => {
-    el.addEventListener('mouseenter', () => outline.classList.add('grow'));
-    el.addEventListener('mouseleave', () => outline.classList.remove('grow'));
-  });
-})();
+// Mouse-following cursor disabled.
+document.querySelectorAll('.cursor-dot, .cursor-outline').forEach((el) => {
+  el.style.display = 'none';
+});
 
 /* =========================================================
    3. THREE.JS 3D HERO SCENE
@@ -246,10 +215,6 @@
   let targetX = 0, targetY = 0;
   let currentX = 0, currentY = 0;
 
-  window.addEventListener('mousemove', (e) => {
-    targetX = (e.clientX / window.innerWidth - 1) * 2;
-    targetY = (e.clientY / window.innerHeight - 1) * 2;
-  });
 
   window.addEventListener('scroll', () => {
     // subtle parallax scroll
@@ -507,38 +472,7 @@
 /* =========================================================
    9. 3D TILT EFFECT
    ========================================================= */
-(function tiltEffect() {
-  if (window.matchMedia('(hover: none)').matches) return;
-
-  const tiltEls = document.querySelectorAll('.tilt');
-
-  tiltEls.forEach((el) => {
-    let rafId = null;
-
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateY = ((x - centerX) / centerX) * 7;
-      const rotateX = ((centerY - y) / centerY) * 7;
-
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-        el.style.transform =
-          `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.015)`;
-      });
-    });
-
-    el.addEventListener('mouseleave', () => {
-      if (rafId) cancelAnimationFrame(rafId);
-      el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
-    });
-  });
-})();
+// Mouse-driven card tilt disabled.
 
 /* =========================================================
    10. CONTACT FORM
