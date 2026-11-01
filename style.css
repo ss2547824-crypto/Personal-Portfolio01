@@ -2181,3 +2181,327 @@ a:focus-visible, button:focus-visible { outline: 3px solid #0071e3; outline-offs
   .hero-desc, .section-sub { font-size: 1rem; }
   .social-card p, .about-list li { overflow-wrap: anywhere; }
 }
+/* =====================================================
+   09. CONTACT — APPLE-INSPIRED PREMIUM DESIGN
+   ===================================================== */
+
+#contact {
+  padding: 100px 0;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#contact .section-head {
+  max-width: 700px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+#contact .section-label {
+  margin-bottom: 16px;
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+#contact .section-title {
+  margin-bottom: 20px;
+  color: #1d1d1f;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+#contact .gradient-text {
+  background: none;
+  color: #0071e3;
+  -webkit-text-fill-color: currentColor;
+}
+
+#contact .section-sub {
+  color: #6e6e73;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: 28px;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+/* Contact information */
+
+#contact .contact-info {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+#contact .info-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #e8e8ed;
+  border-radius: 22px;
+  background: #fff;
+  color: #1d1d1f;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#contact a.info-card:hover {
+  border-color: #b7cfee;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.055);
+}
+
+#contact .info-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  background: #eef5ff;
+  color: #0071e3;
+  font-size: 19px;
+}
+
+#contact .info-card > div:last-child {
+  min-width: 0;
+}
+
+#contact .info-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+#contact .info-card h4 {
+  margin: 0;
+  color: #1d1d1f;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+
+/* Message form */
+
+#contact #contactForm {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 36px;
+  border: 1px solid #e8e8ed;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+}
+
+#contact #contactForm .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+#contact #contactForm .form-group {
+  position: relative;
+  min-width: 0;
+  margin-bottom: 20px;
+}
+
+#contact #contactForm input,
+#contact #contactForm textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 26px 17px 11px;
+  border: 1px solid #b8b8bd;
+  border-radius: 13px;
+  outline: none;
+  background: #fff;
+  color: #1d1d1f;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#contact #contactForm textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+#contact #contactForm label {
+  position: absolute;
+  top: 20px;
+  left: 17px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #6e6e73;
+  font-size: 15px;
+  line-height: 1.2;
+  transform: none;
+  pointer-events: none;
+  transition: top 180ms ease, font-size 180ms ease, color 180ms ease;
+}
+
+#contact #contactForm input:focus + label,
+#contact #contactForm input:not(:placeholder-shown) + label,
+#contact #contactForm textarea:focus + label,
+#contact #contactForm textarea:not(:placeholder-shown) + label {
+  top: 9px;
+  padding: 0;
+  background: transparent;
+  font-size: 11px;
+  transform: none;
+}
+
+#contact #contactForm input:focus,
+#contact #contactForm textarea:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.14);
+}
+
+#contact #contactForm input:focus + label,
+#contact #contactForm textarea:focus + label {
+  color: #0066cc;
+}
+
+#contact #contactForm .btn-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 999px;
+  background: #0071e3;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: none;
+  cursor: pointer;
+  transform: none;
+  transition: background 180ms ease;
+}
+
+#contact #contactForm .btn-full:hover {
+  background: #0077ed;
+  box-shadow: none;
+  transform: none;
+}
+
+#contact #contactForm .btn-full:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+#contact a:focus-visible,
+#contact button:focus-visible {
+  outline: 3px solid #0071e3;
+  outline-offset: 4px;
+}
+
+#contact .form-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#contact .form-status:empty {
+  display: none;
+}
+
+#contact .form-status.success {
+  color: #237a3b;
+}
+
+#contact .form-status.error {
+  color: #b42318;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+  #contact .contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+
+  #contact .contact-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phones */
+
+@media (max-width: 600px) {
+  #contact {
+    padding: 72px 0;
+  }
+
+  #contact .section-head {
+    margin-bottom: 32px;
+  }
+
+  #contact .section-sub {
+    font-size: 16px;
+  }
+
+  #contact .contact-grid {
+    gap: 20px;
+  }
+
+  #contact .contact-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #contact .info-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  #contact #contactForm {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  #contact #contactForm .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  #contact #contactForm textarea {
+    min-height: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #contact *,
+  #contact *::before,
+  #contact *::after {
+    transition: none !important;
+  }
+}
